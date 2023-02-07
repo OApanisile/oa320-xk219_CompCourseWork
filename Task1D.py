@@ -8,7 +8,7 @@ from floodsystem.geo import rivers_with_station
 # Import the build_station_list like in 1A
 from floodsystem.stationdata import build_station_list
 
-'''def run():
+def run():
     
     # Build list of stations
     stations = build_station_list()
@@ -30,7 +30,7 @@ from floodsystem.stationdata import build_station_list
 # Run the program in main branch...I think
 if __name__ == "__main__":
     print("*** Task 1C: CUED Part IA Flood Warning System ***")
-    run()'''
+    run()
 
 # Part 2
 
