@@ -4,9 +4,11 @@
 """This module contains a collection of functions related to
 geographical data.
 
-"""
+"""#
 # Import required modules up here and across multiple functions
 from haversine import haversine, Unit
+from floodsystem.utils import sorted_by_key
+
 
 #Task 1B: sort stations by distance - Olumide
 def stations_by_distance(stations, p):
@@ -28,6 +30,7 @@ def stations_by_distance(stations, p):
     # Return the sorted list as the output
     return station_distance
 
+
 # Task 1C: stations within radius - Olumide
 def stations_within_radius(stations, centre, r):
 
@@ -45,6 +48,7 @@ def stations_within_radius(stations, centre, r):
     #The list with all the stations within the radius r        
     return radius_list 
 
+
 # Task 1D: rivers with a station(s) Part 1 - Olumide
 def rivers_with_station(stations):
     
@@ -58,6 +62,7 @@ def rivers_with_station(stations):
     
     # Make a list of tuples of rivers and stations
     return rivers_list
+
 
 # Task 1D: rivers with a station(s) Part 2 - Olumide
 def stations_by_river(stations):
@@ -80,18 +85,24 @@ def stations_by_river(stations):
     for station in stations:
         results_dictionary = add_values_in_dict (river_dictionary, station.river, station.name)
     return results_dictionary
+
+# Task 1E: Xinze
+def rivers_by_station_number(stations, N):
+        # Make a dictionary with all the rivers and stations
+    river_dictionary_all = stations_by_river(stations)
+
+    river_to_station_no = []
+
+    for i in range(len(list(river_dictionary_all.keys()))):
+        river_to_station_no.append((list(river_dictionary_all.items())[i][0], len(list(river_dictionary_all.items())[i][1])))
+    sorted_river_to_station = sorted_by_key(river_to_station_no, 1, True)
+    output = sorted_river_to_station[:N]
+
+    while True:
+        if sorted_river_to_station[N - 1][0] == sorted_river_to_station[N][0]:
+            output.append(sorted_river_to_station[N])
+            N = N + 1
+        else:
+            break
     
-        
-    
-    
-
-
-
-
-
-
-
-
-
-
-
+    return output
