@@ -45,4 +45,4 @@ def test_inconsistent_typical_range_stations():
         inconsistent_stations.append(stations[1].name)
     inconsistent_stations.sort()
     assert inconsistent_stations == a
-    return inconsistent_stations
+
