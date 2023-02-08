@@ -95,13 +95,6 @@ def test_rivers_by_station_number():
     sorted_river_to_station = sorted_by_key(river_to_station_no, 1 , True)
     output = sorted_river_to_station[:5]
 
-    N=4
-    while True:
-        if sorted_river_to_station[N][1] == sorted_river_to_station[N][1]:
-            output.append(sorted_river_to_station[N])
-            N = N + 1
-        else:
-            break
     assert a == output
 
 
