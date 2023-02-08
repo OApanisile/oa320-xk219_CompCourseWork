@@ -26,18 +26,11 @@ def run():
     
     # Print a list of the first 10 items in the list
     print (sorted_river_list[:10])
- 
-# Run the program in main branch...I think
-if __name__ == "__main__":
-    print("*** Task 1C: CUED Part IA Flood Warning System ***")
-    run()
 
 # Part 2
 
 # Import the stations_by_river function from the geo.py file
-from floodsystem.geo import stations_by_river
-
-def run():
+    from floodsystem.geo import stations_by_river
     
     # Build list of stations
     stations = build_station_list()
@@ -46,10 +39,22 @@ def run():
     river_dictionary_all = stations_by_river (stations)
 
     #Extract the list of stations associated with the specified rivers and sort them alphabetically
-    river_name = str(input('Enter River name: '))
+    river_name = 'River Aire'
     river_list = river_dictionary_all[river_name]
     sorted_river_list = sorted (river_list)
     print(sorted_river_list[:10])
+
+    river_name = 'River Cam'
+    river_list = river_dictionary_all[river_name]
+    sorted_river_list = sorted (river_list)
+    print(sorted_river_list[:10])
+
+    river_name = 'River Thames'
+    river_list = river_dictionary_all[river_name]
+    sorted_river_list = sorted (river_list)
+    print(sorted_river_list[:10])
+
+    
 
 # Run the program in main branch...I think
 if __name__ == "__main__":
