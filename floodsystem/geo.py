@@ -4,7 +4,7 @@
 """This module contains a collection of functions related to
 geographical data.
 
-"""#
+"""
 # Import required modules up here and across multiple functions
 from haversine import haversine, Unit
 from floodsystem.utils import sorted_by_key
@@ -27,7 +27,7 @@ def stations_by_distance(stations, p):
         # Add the stations and respective distances to the list in a tuple format
         station_distance.append ((station.name, station.town, distance))
         
-    # Return the sorted list as the output
+    # Return the list as the output
     return station_distance
 
 
@@ -69,13 +69,17 @@ def stations_by_river(stations):
     
     # Define a method for adding river_names as keys and associated stations as corresponding values
     def add_values_in_dict(river_dictionary, key, stations_list):
+        
         # If the key does not already exist in dictionary, add it to the dictionary keys
         if key not in river_dictionary:
             river_dictionary[key] = list()
             river_dictionary[key].append(stations_list)
+        
         # If the key already exists in the dictionary, add the station to the list of values associated with that key
         elif key in river_dictionary:
             river_dictionary[key].append(stations_list)
+
+        # Output the river_dictionary containing the list of stations associated with each river
         return river_dictionary
     
     # Initialise dictionary
