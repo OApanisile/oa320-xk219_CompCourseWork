@@ -14,6 +14,9 @@ from floodsystem.geo import stations_by_distance
 from floodsystem.geo import stations_within_radius
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
+from floodsystem.geo import rivers_by_station_number
+
+from floodsystem.utils import sorted_by_key
 
 # Set a value n to use as a parameter for how many elements within the stations class are to be tested
 n = 10
@@ -74,3 +77,36 @@ def test_function_no_4():
     assert x == z
 
 # Use appropriate test values to check that the functions work properly
+
+
+
+# Test for function(rivers_by_station_number) of Task E
+
+
+def test_rivers_by_station_number():
+    a=rivers_by_station_number(stations[:10], 5)
+
+    river_dictionary_all = stations_by_river(stations[:10])
+
+    river_to_station_no = []
+
+    for i in range (10) :
+        river_to_station_no.append((list(river_dictionary_all.items())[i][0], len(list(river_dictionary_all.items())[i][1])))
+    sorted_river_to_station = sorted_by_key(river_to_station_no, 1 , True)
+    output = sorted_river_to_station[:5]
+
+    N=4
+    while True:
+        if sorted_river_to_station[N][1] == sorted_river_to_station[N][1]:
+            output.append(sorted_river_to_station[N])
+            N = N + 1
+        else:
+            break
+    assert a == output
+
+
+
+
+
+    
+
