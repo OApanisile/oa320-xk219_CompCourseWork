@@ -95,11 +95,11 @@ def rivers_by_station_number(stations, N):
 
     for i in range(len(list(river_dictionary_all.keys()))):
         river_to_station_no.append((list(river_dictionary_all.items())[i][0], len(list(river_dictionary_all.items())[i][1])))
-    sorted_river_to_station = sorted_by_key(river_to_station_no, 1, True)
+    sorted_river_to_station = sorted_by_key(river_to_station_no, 1 , True)
     output = sorted_river_to_station[:N]
 
     while True:
-        if sorted_river_to_station[N - 1][0] == sorted_river_to_station[N][0]:
+        if sorted_river_to_station[N - 1][1] == sorted_river_to_station[N][1]:
             output.append(sorted_river_to_station[N])
             N = N + 1
         else:
