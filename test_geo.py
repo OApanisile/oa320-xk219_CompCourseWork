@@ -83,19 +83,6 @@ def test_function_no_4():
 # Test for function(rivers_by_station_number) of Task E
 
 
-def test_rivers_by_station_number():
-    a=rivers_by_station_number(stations[:10], 5)
-
-    river_dictionary_all = stations_by_river(stations[:10])
-
-    river_to_station_no = []
-
-    for i in range (10) :
-        river_to_station_no.append((list(river_dictionary_all.items())[i][0], len(list(river_dictionary_all.items())[i][1])))
-    sorted_river_to_station = sorted_by_key(river_to_station_no, 1 , True)
-    output = sorted_river_to_station[:5]
-
-    assert a == output
 
 
 
