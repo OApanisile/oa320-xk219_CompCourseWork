@@ -78,11 +78,7 @@ def test_function_no_4():
 
 # Use appropriate test values to check that the functions work properly
 
-
-
 # Test for function(rivers_by_station_number) of Task E
-
-
 
 # Execution test
 def test_rivers_by_station_number():
