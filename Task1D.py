@@ -44,11 +44,12 @@ def run():
     sorted_river_list = sorted (river_list)
     print(sorted_river_list[:10])
 
+    # Repeat for River Cam
     river_name = 'River Cam'
     river_list = river_dictionary_all[river_name]
     sorted_river_list = sorted (river_list)
     print(sorted_river_list[:10])
-
+    # Repeat for River Thames
     river_name = 'River Thames'
     river_list = river_dictionary_all[river_name]
     sorted_river_list = sorted (river_list)
