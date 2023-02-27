@@ -16,7 +16,7 @@ def stations_highest_rel_level(stations, N):
     latest_level_list=[]
     for station in stations:
         if station.relative_water_level() is not None:
-            latest_level_list.append((station.name, station.relative_water_level()))
+            latest_level_list.append((station, station.relative_water_level()))
     latest_level_list.sort(reverse=True, key=lambda a: a[1])
     N_risk_stations=[]
     for i in range(N):

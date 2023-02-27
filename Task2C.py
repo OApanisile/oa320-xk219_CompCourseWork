@@ -10,7 +10,7 @@ def run():
 
     a=stations_highest_rel_level(stations, 10)
     for station in a:
-        print(station[0],station[1])
+        print(station[0].name,station[1])
 
 if __name__ == "__main__":
     print("*** Task 2C: CUED Part IA Flood Warning System ***")
