@@ -1,7 +1,7 @@
-
 import matplotlib.pyplot as plt 
 import datetime
 import numpy as np
+from floodsystem.analysis import polyfit
 
 
 def plot_water_levels(station, dates, levels):
@@ -24,16 +24,12 @@ def plot_water_levels(station, dates, levels):
 
 # Task 2F Part 2
 def plot_water_level_with_fit(station, dates, levels, p):
-    # Compute polynomial fit
-    poly, t0 = np.polyfit(dates, levels, p)
-
-    # Compute time shift
-    dates_shifted = [(t - t0).total_seconds() / 3600.0 for t in dates]
-
+    poly, t0 = polyfit(dates, levels, p)
+    
     # Plot data and fit
     fig, ax = plt.subplots()
     ax.plot(dates, levels, label="Water level")
-    ax.plot(dates, poly(dates_shifted), label=f"Polyfit (degree {p})")
+    ax.plot(dates, poly(t0), label=f"Polyfit (degree {p})")
     ax.set_title(f"Water Level at {station}")
     ax.set_xlabel("Date")
     ax.set_ylabel("Water Level (m)")

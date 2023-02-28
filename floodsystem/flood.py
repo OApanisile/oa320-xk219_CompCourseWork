@@ -13,7 +13,7 @@ def stations_level_over_threshold(stations, tol):
 
 
 def stations_highest_rel_level(stations, N):
-    latest_level_list=[]
+    latest_level_list = []
     for station in stations:
         if station.relative_water_level() is not None:
             latest_level_list.append((station, station.relative_water_level()))
